@@ -60,10 +60,6 @@ namespace presentacion
                 pbxImagen.Load("https://t4.ftcdn.net/jpg/06/57/37/01/360_F_657370150_pdNeG5pjI976ZasVbKN9VqH1rfoykdYU.jpg");
             }
         }
-        private void btnAgregar_Click(object sender, EventArgs e)
-        {
-           
-        }
 
         private void dgvProductos_SelectionChanged(object sender, EventArgs e)
         {
@@ -72,6 +68,13 @@ namespace presentacion
                 Articulo seleccionado = (Articulo)dgvProductos.CurrentRow.DataBoundItem;
                 cargarImagen(seleccionado.UrlImagen);
             }
+        }
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            frmAgregar agregar = new frmAgregar();
+            agregar.ShowDialog();
+            cargar();
+           
         }
     }
 }
