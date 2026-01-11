@@ -41,7 +41,7 @@ namespace presentacion
             {
                 if(articulo == null)
                     articulo = new Articulo();
-                articulo.Codigo = int.Parse(txtCodigo.Text);
+                articulo.Codigo = txtCodigo.Text;
                 articulo.Nombre = txtNombre.Text;
                 articulo.Descripcion = txtDescripcion.Text;
                 articulo.Marca = (Marca)cbxMarca.SelectedItem;
@@ -51,7 +51,7 @@ namespace presentacion
 
                 if (articulo.Id != 0)
                 {
-                    //negocio.modificar(articulo);
+                    negocio.modificar(articulo);
                     MessageBox.Show("Modificado exitosamente!");
                 }
                 else
@@ -86,22 +86,23 @@ namespace presentacion
             CategoriaNegocio categorianegocio = new CategoriaNegocio(); 
             try
             {
-                cbxMarca.DataSource = marcanegocio.listar();
                 cbxMarca.ValueMember = "Id";
                 cbxMarca.DisplayMember = "Descripcion";
-                cbxCategoria.DataSource = categorianegocio.listar();
+                cbxMarca.DataSource = marcanegocio.listar();
                 cbxCategoria.ValueMember = "Id";
                 cbxCategoria.DisplayMember = "Descripcion";
+                cbxCategoria.DataSource = categorianegocio.listar();
 
                 if (articulo != null)
                 {
-                    txtCodigo.Text = articulo.Codigo.ToString();
+                    txtCodigo.Text = articulo.Codigo;
                     txtNombre.Text = articulo.Nombre;
                     txtDescripcion.Text = articulo.Descripcion;
                     txtImagen.Text = articulo.UrlImagen;
                     cargarImagen(articulo.UrlImagen);
                     cbxMarca.SelectedValue = articulo.Marca.Id;
                     cbxCategoria.SelectedValue = articulo.Categoria.Id;
+                    txtPrecio.Text = articulo.Precio.ToString();
                 }
             }
             catch (Exception ex)
@@ -114,6 +115,17 @@ namespace presentacion
         private void txtImagen_Leave(object sender, EventArgs e)
         {
             cargarImagen(txtImagen.Text);
+        }
+
+        private void btnAgregarImagen_Click(object sender, EventArgs e)
+        {
+            archivo = new OpenFileDialog();
+            archivo.Filter = "jpg|*.jpg|png|*.png";
+            if (archivo.ShowDialog() == DialogResult.OK)
+            {
+                txtImagen.Text = archivo.FileName;
+                cargarImagen(archivo.FileName);
+            }
         }
     }
 }

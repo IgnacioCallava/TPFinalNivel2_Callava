@@ -38,6 +38,7 @@ namespace presentacion
         }
         private void ocultarColumnas()
         {
+            dgvProductos.Columns["Codigo"].Visible = false;
             dgvProductos.Columns["UrlImagen"].Visible = false;
             dgvProductos.Columns["Id"].Visible = false;
             dgvProductos.Columns["Codigo"].Visible=false;
@@ -75,6 +76,16 @@ namespace presentacion
             agregar.ShowDialog();
             cargar();
            
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            Articulo seleccionado;
+            seleccionado = (Articulo)dgvProductos.CurrentRow.DataBoundItem;
+
+            frmAgregar modificar = new frmAgregar(seleccionado);
+            modificar.ShowDialog();
+            cargar();
         }
     }
 }
