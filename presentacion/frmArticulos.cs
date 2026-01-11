@@ -27,6 +27,7 @@ namespace presentacion
             {
                 listaArticulos = negocio.listar();
                 dgvProductos.DataSource = listaArticulos;
+                ocultarColumnas();
                 cargarImagen(listaArticulos[0].UrlImagen);
             }
             catch (Exception ex)
@@ -34,6 +35,13 @@ namespace presentacion
 
                 MessageBox.Show(ex.ToString());
             }
+        }
+        private void ocultarColumnas()
+        {
+            dgvProductos.Columns["UrlImagen"].Visible = false;
+            dgvProductos.Columns["Id"].Visible = false;
+            dgvProductos.Columns["Codigo"].Visible=false;
+            
         }
         private void frmArticulos_Load(object sender, EventArgs e)
         {
@@ -54,10 +62,16 @@ namespace presentacion
         }
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            frmAgregar agregar = new frmAgregar();
-            agregar.ShowDialog();
-            cargar();
+           
         }
 
+        private void dgvProductos_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgvProductos.CurrentRow != null)
+            {
+                Articulo seleccionado = (Articulo)dgvProductos.CurrentRow.DataBoundItem;
+                cargarImagen(seleccionado.UrlImagen);
+            }
+        }
     }
 }

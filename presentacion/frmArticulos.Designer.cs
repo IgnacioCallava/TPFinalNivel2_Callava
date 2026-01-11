@@ -69,12 +69,13 @@
             this.dgvProductos.RowHeadersWidth = 51;
             this.dgvProductos.RowTemplate.Height = 24;
             this.dgvProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvProductos.Size = new System.Drawing.Size(639, 207);
+            this.dgvProductos.Size = new System.Drawing.Size(707, 207);
             this.dgvProductos.TabIndex = 1;
+            this.dgvProductos.SelectionChanged += new System.EventHandler(this.dgvProductos_SelectionChanged);
             // 
             // pbxImagen
             // 
-            this.pbxImagen.Location = new System.Drawing.Point(725, 185);
+            this.pbxImagen.Location = new System.Drawing.Point(765, 185);
             this.pbxImagen.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pbxImagen.Name = "pbxImagen";
             this.pbxImagen.Size = new System.Drawing.Size(356, 207);
@@ -93,7 +94,7 @@
             // 
             // btnBusquedaAvanzada
             // 
-            this.btnBusquedaAvanzada.Location = new System.Drawing.Point(725, 135);
+            this.btnBusquedaAvanzada.Location = new System.Drawing.Point(765, 135);
             this.btnBusquedaAvanzada.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnBusquedaAvanzada.Name = "btnBusquedaAvanzada";
             this.btnBusquedaAvanzada.Size = new System.Drawing.Size(176, 28);
