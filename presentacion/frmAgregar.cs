@@ -28,10 +28,36 @@ namespace presentacion
             this.articulo = articulo;
             Text = "Modificar Articulo";
         }
-
-        private void btnCancelarAgregar_Click(object sender, EventArgs e)
+        private void frmAgregar_Load(object sender, EventArgs e)
         {
-            Close();
+            MarcaNegocio marcanegocio = new MarcaNegocio();
+            CategoriaNegocio categorianegocio = new CategoriaNegocio(); 
+            try
+            {
+                cbxMarca.ValueMember = "Id";
+                cbxMarca.DisplayMember = "Descripcion";
+                cbxMarca.DataSource = marcanegocio.listar();
+                cbxCategoria.ValueMember = "Id";
+                cbxCategoria.DisplayMember = "Descripcion";
+                cbxCategoria.DataSource = categorianegocio.listar();
+
+                if (articulo != null)
+                {
+                    txtCodigo.Text = articulo.Codigo;
+                    txtNombre.Text = articulo.Nombre;
+                    txtDescripcion.Text = articulo.Descripcion;
+                    txtImagen.Text = articulo.UrlImagen;
+                    cargarImagen(articulo.UrlImagen);
+                    cbxMarca.SelectedValue = articulo.Marca.Id;
+                    cbxCategoria.SelectedValue = articulo.Categoria.Id;
+                    txtPrecio.Text = articulo.Precio.ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
         }
 
         private void btnAceptarAgregar_Click(object sender, EventArgs e)
@@ -67,6 +93,21 @@ namespace presentacion
                 throw ex;
             }
         }
+        private void btnCancelarAgregar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void btnAgregarImagen_Click(object sender, EventArgs e)
+        {
+            archivo = new OpenFileDialog();
+            archivo.Filter = "jpg|*.jpg|png|*.png";
+            if (archivo.ShowDialog() == DialogResult.OK)
+            {
+                txtImagen.Text = archivo.FileName;
+                cargarImagen(archivo.FileName);
+            }
+        }
         private void cargarImagen(string imagen)
         {
             try
@@ -80,52 +121,11 @@ namespace presentacion
             }
         }
 
-        private void frmAgregar_Load(object sender, EventArgs e)
-        {
-            MarcaNegocio marcanegocio = new MarcaNegocio();
-            CategoriaNegocio categorianegocio = new CategoriaNegocio(); 
-            try
-            {
-                cbxMarca.ValueMember = "Id";
-                cbxMarca.DisplayMember = "Descripcion";
-                cbxMarca.DataSource = marcanegocio.listar();
-                cbxCategoria.ValueMember = "Id";
-                cbxCategoria.DisplayMember = "Descripcion";
-                cbxCategoria.DataSource = categorianegocio.listar();
-
-                if (articulo != null)
-                {
-                    txtCodigo.Text = articulo.Codigo;
-                    txtNombre.Text = articulo.Nombre;
-                    txtDescripcion.Text = articulo.Descripcion;
-                    txtImagen.Text = articulo.UrlImagen;
-                    cargarImagen(articulo.UrlImagen);
-                    cbxMarca.SelectedValue = articulo.Marca.Id;
-                    cbxCategoria.SelectedValue = articulo.Categoria.Id;
-                    txtPrecio.Text = articulo.Precio.ToString();
-                }
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.ToString());
-            }
-        }
 
         private void txtImagen_Leave(object sender, EventArgs e)
         {
             cargarImagen(txtImagen.Text);
         }
 
-        private void btnAgregarImagen_Click(object sender, EventArgs e)
-        {
-            archivo = new OpenFileDialog();
-            archivo.Filter = "jpg|*.jpg|png|*.png";
-            if (archivo.ShowDialog() == DialogResult.OK)
-            {
-                txtImagen.Text = archivo.FileName;
-                cargarImagen(archivo.FileName);
-            }
-        }
     }
 }
