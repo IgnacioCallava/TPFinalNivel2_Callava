@@ -32,7 +32,7 @@
             this.lblTitulo = new System.Windows.Forms.Label();
             this.dgvProductos = new System.Windows.Forms.DataGridView();
             this.pbxImagen = new System.Windows.Forms.PictureBox();
-            this.txbBuscar = new System.Windows.Forms.TextBox();
+            this.txtFiltro = new System.Windows.Forms.TextBox();
             this.btnBusquedaAvanzada = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
@@ -83,14 +83,15 @@
             this.pbxImagen.TabIndex = 2;
             this.pbxImagen.TabStop = false;
             // 
-            // txbBuscar
+            // txtFiltro
             // 
-            this.txbBuscar.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbBuscar.Location = new System.Drawing.Point(203, 135);
-            this.txbBuscar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txbBuscar.Name = "txbBuscar";
-            this.txbBuscar.Size = new System.Drawing.Size(393, 27);
-            this.txbBuscar.TabIndex = 3;
+            this.txtFiltro.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFiltro.Location = new System.Drawing.Point(203, 135);
+            this.txtFiltro.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtFiltro.Name = "txtFiltro";
+            this.txtFiltro.Size = new System.Drawing.Size(393, 27);
+            this.txtFiltro.TabIndex = 3;
+            this.txtFiltro.TextChanged += new System.EventHandler(this.txbBuscar_TextChanged);
             // 
             // btnBusquedaAvanzada
             // 
@@ -155,7 +156,7 @@
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.btnBusquedaAvanzada);
-            this.Controls.Add(this.txbBuscar);
+            this.Controls.Add(this.txtFiltro);
             this.Controls.Add(this.pbxImagen);
             this.Controls.Add(this.dgvProductos);
             this.Controls.Add(this.lblTitulo);
@@ -177,7 +178,7 @@
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.DataGridView dgvProductos;
         private System.Windows.Forms.PictureBox pbxImagen;
-        private System.Windows.Forms.TextBox txbBuscar;
+        private System.Windows.Forms.TextBox txtFiltro;
         private System.Windows.Forms.Button btnBusquedaAvanzada;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnModificar;

@@ -99,5 +99,25 @@ namespace presentacion
             verDetalle.ShowDialog();
             cargar();
         }
+
+        private void txbBuscar_TextChanged(object sender, EventArgs e)
+        {
+            List<Articulo> listaFiltrada;
+            string filtro = txtFiltro.Text;
+
+            if(filtro.Length >= 3)
+            {
+                listaFiltrada = listaArticulos.FindAll(x => x.Nombre.ToUpper().Contains(filtro.ToUpper()) || x.Marca.Descripcion.ToUpper().Contains(filtro.ToUpper()) || x.Categoria.Descripcion.ToUpper().Contains(filtro.ToUpper()));
+
+            }
+            else
+            {
+                listaFiltrada = listaArticulos;
+            }
+
+            dgvProductos.DataSource = null;
+            dgvProductos.DataSource = listaFiltrada;
+            ocultarColumnas();
+        }
     }
 }
