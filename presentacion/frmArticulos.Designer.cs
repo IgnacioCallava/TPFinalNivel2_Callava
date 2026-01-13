@@ -38,6 +38,8 @@
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnDetalle = new System.Windows.Forms.Button();
             this.lblBusquedaRapida = new System.Windows.Forms.Label();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnResetear = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxImagen)).BeginInit();
             this.SuspendLayout();
@@ -46,7 +48,7 @@
             // 
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Font = new System.Drawing.Font("Bernard MT Condensed", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.Location = new System.Drawing.Point(539, 25);
+            this.lblTitulo.Location = new System.Drawing.Point(526, 26);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(181, 55);
             this.lblTitulo.TabIndex = 0;
@@ -102,6 +104,7 @@
             this.btnBusquedaAvanzada.TabIndex = 4;
             this.btnBusquedaAvanzada.Text = "Busqueda Avanzada";
             this.btnBusquedaAvanzada.UseVisualStyleBackColor = true;
+            this.btnBusquedaAvanzada.Click += new System.EventHandler(this.btnBusquedaAvanzada_Click);
             // 
             // btnAgregar
             // 
@@ -146,11 +149,32 @@
             this.lblBusquedaRapida.TabIndex = 8;
             this.lblBusquedaRapida.Text = "Busqueda Rapida:";
             // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Location = new System.Drawing.Point(244, 411);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(77, 31);
+            this.btnEliminar.TabIndex = 9;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            // 
+            // btnResetear
+            // 
+            this.btnResetear.Location = new System.Drawing.Point(947, 135);
+            this.btnResetear.Name = "btnResetear";
+            this.btnResetear.Size = new System.Drawing.Size(79, 27);
+            this.btnResetear.TabIndex = 10;
+            this.btnResetear.Text = "Resetear";
+            this.btnResetear.UseVisualStyleBackColor = true;
+            this.btnResetear.Click += new System.EventHandler(this.btnResetear_Click);
+            // 
             // frmArticulos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1180, 484);
+            this.Controls.Add(this.btnResetear);
+            this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.lblBusquedaRapida);
             this.Controls.Add(this.btnDetalle);
             this.Controls.Add(this.btnModificar);
@@ -184,6 +208,8 @@
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnDetalle;
         private System.Windows.Forms.Label lblBusquedaRapida;
+        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Button btnResetear;
     }
 }
 

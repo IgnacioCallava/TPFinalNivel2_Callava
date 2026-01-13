@@ -119,5 +119,34 @@ namespace presentacion
             dgvProductos.DataSource = listaFiltrada;
             ocultarColumnas();
         }
+
+        private void btnBusquedaAvanzada_Click(object sender, EventArgs e)
+        {
+            frmBusquedaAvanzada busquedaAvanzada = new frmBusquedaAvanzada();
+
+            if (busquedaAvanzada.ShowDialog() == DialogResult.OK)
+            {
+                ArticuloNegocio negocio = new ArticuloNegocio();
+
+                try
+                {
+                    string campo = busquedaAvanzada.Campo;
+                    string criterio = busquedaAvanzada.Criterio;
+                    string filtro = busquedaAvanzada.Filtro;
+
+                    dgvProductos.DataSource = negocio.filtrar(campo, criterio, filtro);
+                }
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show(ex.ToString());
+                }
+            }
+        }
+
+        private void btnResetear_Click(object sender, EventArgs e)
+        {
+            cargar();
+        }
     }
 }
