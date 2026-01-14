@@ -65,29 +65,30 @@ namespace presentacion
             }
                 return true;
         }
-        //Buscar mas validaciones para no solo mostrar puros cartelitos
+       
         private bool validarFiltro()
         {
             if(cbxCampoBA.SelectedIndex < 0)
             {
-                MessageBox.Show("Por favor, seleccione el campo para filtrar.");
+                errorProviderCampoBA.SetError(cbxCampoBA, "Seleccione un campo");
                 return true;
             }
             if(cbxCriterioBA.SelectedIndex < 0)
             {
-                MessageBox.Show("Por favor, seleccione el criterio para filtrar.");
+                errorProviderCriterioBA.SetError(cbxCriterioBA, "Seleccione un criterio");
                 return true;
             }
             if(cbxCampoBA.SelectedItem.ToString() == "Precio")
             {
                 if (string.IsNullOrEmpty(txtFiltroBA.Text))
                 {
-                    MessageBox.Show("Debes cargar el filtro para numéricos...");
+
+                    MessageBox.Show("Debe ingresar un valor para filtrar por precio", "Filtro incompleto", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return true;
                 }
                 if (!(soloNumeros(txtFiltroBA.Text)))
                 {
-                    MessageBox.Show("Solo números para filtrar por un campo numérico...");
+                    MessageBox.Show("Debe ingresar solo números", "Valor inválido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return true;
                 }
             }

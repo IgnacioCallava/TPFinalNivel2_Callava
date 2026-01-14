@@ -59,9 +59,7 @@ namespace presentacion
             dgvProductos.Columns["Codigo"].Visible = false;
             dgvProductos.Columns["Descripcion"].Visible = false;
             dgvProductos.Columns["UrlImagen"].Visible = false;
-            dgvProductos.Columns["Id"].Visible = false;
-            
-            
+            dgvProductos.Columns["Id"].Visible = false;   
         }
 
         private void dgvProductos_SelectionChanged(object sender, EventArgs e)

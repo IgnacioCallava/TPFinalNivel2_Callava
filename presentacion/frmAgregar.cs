@@ -127,5 +127,14 @@ namespace presentacion
             cargarImagen(txtImagen.Text);
         }
 
+        private void btnAgregarImagen_MouseEnter(object sender, EventArgs e)
+        {
+            btnAgregarImagen.BackColor = SystemColors.MenuHighlight;
+        }
+
+        private void btnAgregarImagen_MouseLeave(object sender, EventArgs e)
+        {
+            btnAgregarImagen.BackColor = SystemColors.InactiveCaption;
+        }
     }
 }

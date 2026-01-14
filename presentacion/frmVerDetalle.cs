@@ -70,5 +70,15 @@ namespace presentacion
         {
             Close();
         }
+
+        private void btnSalirDetalle_MouseEnter(object sender, EventArgs e)
+        {
+            btnSalirDetalle.BackColor = Color.IndianRed;
+        }
+
+        private void btnSalirDetalle_MouseLeave(object sender, EventArgs e)
+        {
+            btnSalirDetalle.BackColor = SystemColors.InactiveCaption;
+        }
     }
 }
