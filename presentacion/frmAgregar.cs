@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using negocio;
 using System.Configuration;
 using System.IO;
+using System.Runtime.InteropServices;
 
 namespace presentacion
 {
@@ -60,6 +61,44 @@ namespace presentacion
             }
         }
 
+       
+        private bool validarArticulo()
+        {
+            bool valido = true;
+            errorProvider.Clear();  
+
+            if (string.IsNullOrWhiteSpace(txtCodigo.Text))
+            {
+                errorProvider.SetError(txtCodigo, "El código es obligatorio");
+                valido = false;
+            }
+            if (string.IsNullOrWhiteSpace(txtNombre.Text))
+            {
+                errorProvider.SetError(txtNombre, "El nombre es obligatorio");
+                valido = false;
+            }
+            if (string.IsNullOrWhiteSpace(txtDescripcion.Text))
+            {
+                errorProvider.SetError(txtDescripcion, "La descripción es obligatoria");
+                valido = false;
+            }
+            if (!decimal.TryParse(txtPrecio.Text, out decimal precio))
+            {
+                errorProvider.SetError(txtPrecio, "Ingrese un valor numérico válido");
+                valido = false;
+            }
+            else if (precio <= 0)
+            {
+                DialogResult resultado = MessageBox.Show("El precio es 0 o menor.\n¿Desea continuar?","Confirmar precio", MessageBoxButtons.YesNo,MessageBoxIcon.Warning);
+
+                if (resultado == DialogResult.No)
+                {
+                    valido = false;
+                }
+            }
+
+            return valido;
+        }
         private void btnAceptarAgregar_Click(object sender, EventArgs e)
         {
             ArticuloNegocio negocio = new ArticuloNegocio();
@@ -74,6 +113,8 @@ namespace presentacion
                 articulo.Categoria = (Categoria)cbxCategoria.SelectedItem;
                 articulo.UrlImagen = txtImagen.Text;
                 articulo.Precio = decimal.Parse(txtPrecio.Text);
+                
+                
 
                 if (articulo.Id != 0)
                 {

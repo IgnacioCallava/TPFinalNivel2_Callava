@@ -123,16 +123,18 @@
             this.txtCodigoDetalle.Location = new System.Drawing.Point(86, 13);
             this.txtCodigoDetalle.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtCodigoDetalle.Name = "txtCodigoDetalle";
+            this.txtCodigoDetalle.ReadOnly = true;
             this.txtCodigoDetalle.Size = new System.Drawing.Size(163, 27);
-            this.txtCodigoDetalle.TabIndex = 9;
+            this.txtCodigoDetalle.TabIndex = 0;
             // 
             // txtNombreDetalle
             // 
             this.txtNombreDetalle.Location = new System.Drawing.Point(86, 66);
             this.txtNombreDetalle.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtNombreDetalle.Name = "txtNombreDetalle";
+            this.txtNombreDetalle.ReadOnly = true;
             this.txtNombreDetalle.Size = new System.Drawing.Size(163, 27);
-            this.txtNombreDetalle.TabIndex = 11;
+            this.txtNombreDetalle.TabIndex = 1;
             // 
             // txtDescripcionDetalle
             // 
@@ -140,44 +142,49 @@
             this.txtDescripcionDetalle.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtDescripcionDetalle.Multiline = true;
             this.txtDescripcionDetalle.Name = "txtDescripcionDetalle";
+            this.txtDescripcionDetalle.ReadOnly = true;
             this.txtDescripcionDetalle.Size = new System.Drawing.Size(346, 120);
-            this.txtDescripcionDetalle.TabIndex = 12;
+            this.txtDescripcionDetalle.TabIndex = 6;
             // 
             // cbxMarcaDetalle
             // 
             this.cbxMarcaDetalle.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxMarcaDetalle.Enabled = false;
             this.cbxMarcaDetalle.FormattingEnabled = true;
             this.cbxMarcaDetalle.Location = new System.Drawing.Point(86, 119);
             this.cbxMarcaDetalle.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbxMarcaDetalle.Name = "cbxMarcaDetalle";
             this.cbxMarcaDetalle.Size = new System.Drawing.Size(163, 28);
-            this.cbxMarcaDetalle.TabIndex = 13;
+            this.cbxMarcaDetalle.TabIndex = 2;
             // 
             // cbxCategoriaDetalle
             // 
             this.cbxCategoriaDetalle.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxCategoriaDetalle.Enabled = false;
             this.cbxCategoriaDetalle.FormattingEnabled = true;
             this.cbxCategoriaDetalle.Location = new System.Drawing.Point(86, 173);
             this.cbxCategoriaDetalle.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbxCategoriaDetalle.Name = "cbxCategoriaDetalle";
             this.cbxCategoriaDetalle.Size = new System.Drawing.Size(163, 28);
-            this.cbxCategoriaDetalle.TabIndex = 14;
+            this.cbxCategoriaDetalle.TabIndex = 3;
             // 
             // txtImagenDetalle
             // 
             this.txtImagenDetalle.Location = new System.Drawing.Point(86, 227);
             this.txtImagenDetalle.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtImagenDetalle.Name = "txtImagenDetalle";
+            this.txtImagenDetalle.ReadOnly = true;
             this.txtImagenDetalle.Size = new System.Drawing.Size(163, 27);
-            this.txtImagenDetalle.TabIndex = 15;
+            this.txtImagenDetalle.TabIndex = 4;
             // 
             // txtPrecioDetalle
             // 
             this.txtPrecioDetalle.Location = new System.Drawing.Point(86, 280);
             this.txtPrecioDetalle.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtPrecioDetalle.Name = "txtPrecioDetalle";
+            this.txtPrecioDetalle.ReadOnly = true;
             this.txtPrecioDetalle.Size = new System.Drawing.Size(163, 27);
-            this.txtPrecioDetalle.TabIndex = 16;
+            this.txtPrecioDetalle.TabIndex = 5;
             // 
             // pbxDetalle
             // 
@@ -197,7 +204,7 @@
             this.btnSalirDetalle.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnSalirDetalle.Name = "btnSalirDetalle";
             this.btnSalirDetalle.Size = new System.Drawing.Size(100, 35);
-            this.btnSalirDetalle.TabIndex = 18;
+            this.btnSalirDetalle.TabIndex = 7;
             this.btnSalirDetalle.Text = "Salir";
             this.btnSalirDetalle.UseVisualStyleBackColor = false;
             this.btnSalirDetalle.Click += new System.EventHandler(this.btnSalirDetalle_Click);

@@ -63,7 +63,7 @@
             this.cbxCampoBA.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbxCampoBA.Name = "cbxCampoBA";
             this.cbxCampoBA.Size = new System.Drawing.Size(160, 28);
-            this.cbxCampoBA.TabIndex = 3;
+            this.cbxCampoBA.TabIndex = 0;
             this.cbxCampoBA.SelectedIndexChanged += new System.EventHandler(this.cbxCampoBA_SelectedIndexChanged);
             // 
             // lblCriterio
@@ -85,7 +85,7 @@
             this.cbxCriterioBA.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbxCriterioBA.Name = "cbxCriterioBA";
             this.cbxCriterioBA.Size = new System.Drawing.Size(160, 28);
-            this.cbxCriterioBA.TabIndex = 5;
+            this.cbxCriterioBA.TabIndex = 1;
             // 
             // lblFiltroAvanzado
             // 
@@ -104,7 +104,7 @@
             this.txtFiltroBA.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtFiltroBA.Name = "txtFiltroBA";
             this.txtFiltroBA.Size = new System.Drawing.Size(220, 27);
-            this.txtFiltroBA.TabIndex = 7;
+            this.txtFiltroBA.TabIndex = 2;
             // 
             // btnBuscarAvanzado
             // 
@@ -114,7 +114,7 @@
             this.btnBuscarAvanzado.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnBuscarAvanzado.Name = "btnBuscarAvanzado";
             this.btnBuscarAvanzado.Size = new System.Drawing.Size(100, 35);
-            this.btnBuscarAvanzado.TabIndex = 8;
+            this.btnBuscarAvanzado.TabIndex = 4;
             this.btnBuscarAvanzado.Text = "Buscar";
             this.btnBuscarAvanzado.UseVisualStyleBackColor = false;
             this.btnBuscarAvanzado.Click += new System.EventHandler(this.btnBuscarAvanzado_Click);
@@ -127,7 +127,7 @@
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(100, 35);
-            this.btnCancelar.TabIndex = 9;
+            this.btnCancelar.TabIndex = 3;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);

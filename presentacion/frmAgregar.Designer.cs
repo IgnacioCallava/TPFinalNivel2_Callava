@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAgregar));
             this.lblCodigo = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
@@ -47,7 +48,9 @@
             this.btnCancelarAgregar = new System.Windows.Forms.Button();
             this.cbxMarca = new System.Windows.Forms.ComboBox();
             this.btnAgregarImagen = new System.Windows.Forms.Button();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pbxAgregar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // lblCodigo
@@ -133,7 +136,7 @@
             this.txtCodigo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(160, 27);
-            this.txtCodigo.TabIndex = 7;
+            this.txtCodigo.TabIndex = 0;
             // 
             // txtNombre
             // 
@@ -141,7 +144,7 @@
             this.txtNombre.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(160, 27);
-            this.txtNombre.TabIndex = 8;
+            this.txtNombre.TabIndex = 1;
             // 
             // txtDescripcion
             // 
@@ -149,7 +152,7 @@
             this.txtDescripcion.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(160, 27);
-            this.txtDescripcion.TabIndex = 9;
+            this.txtDescripcion.TabIndex = 2;
             // 
             // cbxCategoria
             // 
@@ -159,7 +162,7 @@
             this.cbxCategoria.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbxCategoria.Name = "cbxCategoria";
             this.cbxCategoria.Size = new System.Drawing.Size(160, 28);
-            this.cbxCategoria.TabIndex = 11;
+            this.cbxCategoria.TabIndex = 4;
             // 
             // txtImagen
             // 
@@ -167,7 +170,7 @@
             this.txtImagen.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtImagen.Name = "txtImagen";
             this.txtImagen.Size = new System.Drawing.Size(160, 27);
-            this.txtImagen.TabIndex = 12;
+            this.txtImagen.TabIndex = 5;
             this.txtImagen.Leave += new System.EventHandler(this.txtImagen_Leave);
             // 
             // txtPrecio
@@ -176,7 +179,7 @@
             this.txtPrecio.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(160, 27);
-            this.txtPrecio.TabIndex = 13;
+            this.txtPrecio.TabIndex = 6;
             // 
             // pbxAgregar
             // 
@@ -196,7 +199,7 @@
             this.btnAceptarAgregar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnAceptarAgregar.Name = "btnAceptarAgregar";
             this.btnAceptarAgregar.Size = new System.Drawing.Size(100, 35);
-            this.btnAceptarAgregar.TabIndex = 15;
+            this.btnAceptarAgregar.TabIndex = 7;
             this.btnAceptarAgregar.Text = "Aceptar";
             this.btnAceptarAgregar.UseVisualStyleBackColor = false;
             this.btnAceptarAgregar.Click += new System.EventHandler(this.btnAceptarAgregar_Click);
@@ -209,7 +212,7 @@
             this.btnCancelarAgregar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnCancelarAgregar.Name = "btnCancelarAgregar";
             this.btnCancelarAgregar.Size = new System.Drawing.Size(100, 35);
-            this.btnCancelarAgregar.TabIndex = 16;
+            this.btnCancelarAgregar.TabIndex = 8;
             this.btnCancelarAgregar.Text = "Cancelar";
             this.btnCancelarAgregar.UseVisualStyleBackColor = false;
             this.btnCancelarAgregar.Click += new System.EventHandler(this.btnCancelarAgregar_Click);
@@ -222,7 +225,7 @@
             this.cbxMarca.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbxMarca.Name = "cbxMarca";
             this.cbxMarca.Size = new System.Drawing.Size(160, 28);
-            this.cbxMarca.TabIndex = 17;
+            this.cbxMarca.TabIndex = 3;
             // 
             // btnAgregarImagen
             // 
@@ -238,6 +241,10 @@
             this.btnAgregarImagen.Click += new System.EventHandler(this.btnAgregarImagen_Click);
             this.btnAgregarImagen.MouseEnter += new System.EventHandler(this.btnAgregarImagen_MouseEnter);
             this.btnAgregarImagen.MouseLeave += new System.EventHandler(this.btnAgregarImagen_MouseLeave);
+            // 
+            // errorProvider
+            // 
+            this.errorProvider.ContainerControl = this;
             // 
             // frmAgregar
             // 
@@ -271,6 +278,7 @@
             this.Text = "Agregar";
             this.Load += new System.EventHandler(this.frmAgregar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbxAgregar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -296,5 +304,6 @@
         private System.Windows.Forms.Button btnCancelarAgregar;
         private System.Windows.Forms.ComboBox cbxMarca;
         private System.Windows.Forms.Button btnAgregarImagen;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }
