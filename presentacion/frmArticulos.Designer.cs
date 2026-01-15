@@ -112,7 +112,7 @@
             // 
             this.btnAgregar.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregar.Location = new System.Drawing.Point(45, 481);
+            this.btnAgregar.Location = new System.Drawing.Point(45, 448);
             this.btnAgregar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(77, 31);
@@ -125,7 +125,7 @@
             // 
             this.btnModificar.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnModificar.Location = new System.Drawing.Point(140, 481);
+            this.btnModificar.Location = new System.Drawing.Point(149, 448);
             this.btnModificar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(86, 32);
@@ -138,7 +138,7 @@
             // 
             this.btnDetalle.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.btnDetalle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDetalle.Location = new System.Drawing.Point(758, 484);
+            this.btnDetalle.Location = new System.Drawing.Point(758, 449);
             this.btnDetalle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDetalle.Name = "btnDetalle";
             this.btnDetalle.Size = new System.Drawing.Size(99, 31);
@@ -162,7 +162,7 @@
             // 
             this.btnEliminar.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminar.Location = new System.Drawing.Point(249, 481);
+            this.btnEliminar.Location = new System.Drawing.Point(262, 447);
             this.btnEliminar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(77, 32);

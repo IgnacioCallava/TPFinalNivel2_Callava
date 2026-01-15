@@ -12,6 +12,7 @@ using negocio;
 using System.Configuration;
 using System.IO;
 using System.Runtime.InteropServices;
+using System.Xml.Linq;
 
 namespace presentacion
 {
@@ -104,6 +105,9 @@ namespace presentacion
             ArticuloNegocio negocio = new ArticuloNegocio();
             try
             {
+                if (!validarArticulo())
+                    return;
+
                 if(articulo == null)
                     articulo = new Articulo();
                 articulo.Codigo = txtCodigo.Text;
@@ -119,13 +123,29 @@ namespace presentacion
                 if (articulo.Id != 0)
                 {
                     negocio.modificar(articulo);
-                    MessageBox.Show("Modificado exitosamente!");
+                    MessageBox.Show("El artículo se modificó correctamente!", "Modificación exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
                     negocio.agregar(articulo);
-                    MessageBox.Show("Agregado exitosamente!", "Agregar", MessageBoxButtons.OK);
+                    MessageBox.Show("Agregado exitosamente!", "Agregar", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
+
+                if (archivo != null && !(txtImagen.Text.ToUpper().Contains("HTTP")))
+                {
+                    string extension = Path.GetExtension(archivo.FileName);
+                    string nombreSinExtension = Path.GetFileNameWithoutExtension(archivo.FileName);
+
+                    string nuevoNombre = $"{nombreSinExtension}_{DateTime.Now:yyyyMMddHHmmssfff}{extension}";
+
+                    string rutaDestino = Path.Combine(
+                        ConfigurationManager.AppSettings["Images-folder"],
+                        nuevoNombre);
+
+                    File.Copy(archivo.FileName, rutaDestino);
+
+                }
+                
                 Close();
             }
             catch (Exception ex)
