@@ -61,6 +61,7 @@ namespace negocio
             try
             {
                 datos.setearConsulta("UPDATE ARTICULOS set Codigo = @codigo, Nombre = @nombre, Descripcion = @descripcion, ImagenUrl = @imagenurl, IdMarca = @idmarca, IdCategoria = @idcategoria, Precio = @precio WHERE Id = @id");
+                datos.setearParametro("@id", arti.Id);
                 datos.setearParametro("@codigo", arti.Codigo);
                 datos.setearParametro("@nombre", arti.Nombre);
                 datos.setearParametro("@descripcion",arti.Descripcion);
